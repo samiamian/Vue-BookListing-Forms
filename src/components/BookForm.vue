@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     bookSubmit(bookData) {
-      this.$emit("addBook", bookData.bookTitle, bookData.bookAuthor);
+      this.$emit("addBook", bookData);
     }
   }
 };
