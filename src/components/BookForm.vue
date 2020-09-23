@@ -3,7 +3,9 @@
     <input v-model="bookData.bookTitle" type="text" name="title" value="" placeholder="Book Title">
     <input v-model="bookData.bookAuthor" type="text" name="author" value="" placeholder="Book Author">
     <div>
-      <label for="finishedReading">Finished Reading:<input v-model="bookData.finishedReading" type="checkbox" name="finishedReading"></label>
+      <label for="finishedReading">Finished Reading:
+        <input v-model="bookData.finishedReading" type="checkbox" name="finishedReading">
+      </label>
     </div>
     <div>
       <label for="borrowed">Borrowed:<input v-model="bookData.ownership" type="radio" value="borrowed" name="borrowed"></label>
@@ -27,12 +29,12 @@ export default {
         bookAuthor: "",
         finishedReading: false,
         ownership: []
-      },
-    };
+      }
+    }
   },
   methods: {
     bookSubmit(bookData) {
-      this.$emit("addBook", bookTitle, bookAuthor);
+      this.$emit("addBook", bookData.bookTitle, bookData.bookAuthor);
     }
   }
 };
